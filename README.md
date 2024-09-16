@@ -4,12 +4,12 @@
   </a>
 </p>
 
-<h3 align="center">Bootstrap</h3>
+<h3 align="center">Bring Your Own Bootstrap</h3>
 
 <p align="center">
   Sleek, intuitive, and powerful front-end framework for faster and easier web development.
   <br>
-  <a href="https://getbootstrap.com/docs/5.3/"><strong>Explore Bootstrap docs »</strong></a>
+  <a href="https://kant2002.github.io/custom-bootstrap/docs/5.3/"><strong>Explore Bring Your Own Bootstrap docs »</strong></a>
   <br>
   <br>
   <a href="https://github.com/twbs/bootstrap/issues/new?assignees=-&labels=bug&template=bug_report.yml">Report bug</a>
@@ -22,9 +22,25 @@
 </p>
 
 
-## Bootstrap 5
+## Bring Your Own Boostrap 5
 
-Our default branch is for development of our Bootstrap 5 release. Head to the [`v4-dev` branch](https://github.com/twbs/bootstrap/tree/v4-dev) to view the readme, documentation, and source code for Bootstrap 4.
+This is sample, how you can create not only your own Bootstrap, but what is more important, your own docs for Bootsrap.
+
+You can take a look at the [navbar](https://kant2002.github.io/custom-bootstrap/docs/5.3/components/navbar/), [regular buttons](https://kant2002.github.io/custom-bootstrap/docs/5.3/components/buttons/), [checks & radiobuttons](https://kant2002.github.io/custom-bootstrap/docs/5.3/forms/checks-radios/) for the difference.
+
+If you ever create shared styles and components for your own brand, it's important not only create custom styles, but also documentations for them. Given how popular Bootstrap for low-key solutions, that's additional benefit where you can help your devs. Also if you web-developer, and want to check how your theme looks during your dev cycle. If you small team, that's indespensable tool which you can use with client's communications and at the same time, you did not have to learn new library.
+
+This repository do not provide all information, how you can fork Original Bootstrap docs to suit your needs, but give you starting point, to explore Boostrap codebase. Maybe if you look inside, you will have appetite how you can improve it further.
+
+I create only following changes
+
+- [Setup publishing to Github Pages](https://github.com/kant2002/custom-bootstrap/commit/ffeb8f8d99ff9f16ddb7f0d54fd26e54198cc213). This is to setup build pipeline for the demo. Just in case you want to be frugal and also use GitHub pages for your docs website.
+- [Modify Boostrap to be servable from Github pages](https://github.com/kant2002/custom-bootstrap/commit/fb1ecc5ba739813209c4dc84983a969a549b9c95). Currently Bootstrap docs assume that they would be served from root domain. You may need similar commit, if you want serve your docs from subfolder on your website. I hope that I can upstream these changes eventually.
+- [Add custom theme](https://github.com/kant2002/custom-bootstrap/commit/d8c6adea6cd46ad80bcdde767ae4a682fb98ef88). This is actual change. it was done using simple changes in the SASS files, plus running `npm run css` for compiling CSS. Also don't forget to update integrity values. You should commit that CSS in the repo, if you want to use existing scripts, of you have to setup your own build pipeline if you pedantic.
+
+## Original Boostrap 5
+
+Our default branch is for development of our Bring Your Own Boostrap 5 release. Head to the [`Original Bootstrap` repo](https://github.com/twbs/bootstrap/) to view the readme, documentation, and source code for current version of Bootstrap.
 
 
 ## Table of contents
