@@ -3,7 +3,7 @@ name: Docs
 on:
   push:
     branches:
-      - main
+      - custom-docs
   pull_request:
   workflow_dispatch:
 
@@ -13,6 +13,13 @@ env:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   docs:
@@ -48,3 +55,21 @@ jobs:
           recurse: true
           verbosity: error
           skip: "^(?!http://localhost)"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./_site
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: docs
+    if: github.event_name != 'pull_request'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
